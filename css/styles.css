@@ -1,0 +1,845 @@
+/* ============================= */
+/* Global Styles & Variables */
+/* ============================= */
+
+:root {
+    /* 🌿 Primary Colors */
+    --primary-color-1: #F5E8D6;
+    --primary-color-2: #3E3D39; 
+    --primary-color-3: #D26A4280;
+
+    /* 🌸 Secondary Colors */
+    --secondary-color-1: #D26A42;
+    --secondary-color-2: #FFDB5880;
+    
+
+    /* Other Global Variables */
+    --transition-speed: 0.5s; /* Global transition duration */
+}
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Afacad Flux", sans-serif;
+    background-color: var(--primary-color-1); /* Setting a clean background */
+    color: var(--primary-color-2); /* Default text color */
+}
+
+/* ============================= */
+/* Global Navigation & Footer Styles */
+/* ============================= */
+
+nav, footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 150px;
+    margin: 0 auto; /* Center align */
+}
+
+/* ============================= */
+/* Navigation Bar Links */
+/* ============================= */
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding: 0 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary-color-2);
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: color var(--transition-speed) ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color-3); /* Apply global hover effect */
+}
+
+/* ============================= */
+/* Dropdown Menu Styles */
+/* ============================= */
+
+/* Initially hidden dropdown menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 10px;
+    background-color: var(--primary-color-1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Show dropdown when hovering over its parent */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Individual dropdown menu items */
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: var(--primary-color-2);
+    display: block;
+}
+
+/* ============================= */
+/* Responsive Hamburger Menu */
+/* ============================= */
+
+.hamburger {
+    display: none; /* Initially hidden on larger screens */
+}
+
+.hamburger-links {
+    display: none;
+}
+
+/* ============================= */
+/* Logo with Smooth Transition */
+/* ============================= */
+
+.logo {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+/* Logo Images */
+.logo img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+
+/* Default English logo */
+.logo img.default-logo {
+    opacity: 1;
+}
+
+/* Urdu logo (hidden by default) */
+.logo img.hover-logo {
+    opacity: 0;
+}
+
+/* Show Urdu logo on hover */
+.logo:hover .default-logo {
+    opacity: 0;
+}
+
+.logo:hover .hover-logo {
+    opacity: 1;
+}
+
+/* ============================= */
+/* Social Media Icons with Hover Effect */
+/* ============================= */
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-self: flex-end;
+}
+
+/* Individual icon wrapper */
+.icon-wrapper {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.icon-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity var(--transition-speed) ease-in-out;
+}
+
+/* Default icon (visible) */
+.icon-wrapper img.default {
+    opacity: 1;
+}
+
+/* Hover icon (hidden by default) */
+.icon-wrapper img.hover {
+    opacity: 0;
+}
+
+/* Swap icons on hover */
+.icon-wrapper:hover .default {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.icon-wrapper:hover .hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* Hero Section Styles */
+/* ============================= */
+
+.hero {
+    width: 70%;
+    height: 700px;
+    display: flex;
+    margin: 0 auto; /* Center align */
+}
+
+/* Left Side of Hero Section */
+.hero-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Right Side of Hero Section */
+.hero-right {
+    width: 50%;
+}
+
+/* Hero Logo & Text */
+.hero-logo,
+.hero-text {
+    width: 80%;
+}
+
+.hero-text {
+    text-align: start;
+}
+
+/* ============================= */
+/* Hero Button Styles */
+/* ============================= */
+
+.hero-btn {
+    border-radius:10px; 
+    min-height:52px; 
+    min-width: 120px;
+    background-color: var(--primary-color-3);
+    color: var(--primary-color-2);
+    font-size: 1rem; /* Fixed invalid property */
+    font-weight: 500; /* Fixed "medium" to valid weight */
+    text-transform: uppercase;
+    border: none;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero-btn:hover {
+    background-color: var(--primary-color-2);
+    color: var(--primary-color-1);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* Reusable Carousel Styles */
+/* ============================= */
+
+/* Wrapper for Carousel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Ensure images sit in a row */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Each image should take the full width of the carousel */
+.carousel-images img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 675px;
+    object-fit: cover;
+}
+
+/* Carousel Navigation Controls */
+.carousel-controls {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Previous & Next Buttons */
+.prev,
+.next {
+    background-color: var(--primary-color-3);
+    border: none;
+    cursor: pointer;
+}
+
+/* ============================= */
+/* Residencies Section Styles */
+/* ============================= */
+
+.residencies {
+    width: 70%;
+    margin: 0 auto; /* Center align */
+}
+
+/* Centered Paragraph within Residencies */
+.residencies > p {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Residency Text Block */
+.residency-text {
+    width: 45%;
+    margin: 0 auto;
+}
+
+/* ============================= */
+/* Typography Styles */
+/* ============================= */
+
+.heading {
+    font-size: 2.5rem;
+}
+
+.subheading {
+    font-size: 1.5rem;
+}
+
+/* Center Align Text Elements */
+.heading,
+.subheading,
+p {
+    text-align: center;
+}
+
+/* ============================= */
+/* Residency Item Styles */
+/* ============================= */
+
+.residency {
+    display: flex;
+    align-items: center;
+}
+
+/* Residency Image */
+.res-img {
+    width: 50%;
+    height: 675px;
+    object-fit: cover;
+}
+
+/* Reverse Layout for Artist-Led Residency */
+.artist-led-residency {
+    flex-direction: row-reverse;
+}
+
+/* ================================== */
+/* Artists-in-Residence Section Styles */
+/* ================================== */
+
+.artists-in-residence {
+    width: 70%;
+    margin: 0 auto 1rem auto; /* Center align */
+}
+
+/* ================================== */
+/* Artist Review Section */
+/* ================================== */
+
+.review {
+    display: flex;
+    height: 250px;
+}
+
+/* Artist Profile Image */
+.artist-img {
+    min-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular profile image */
+}
+
+/* Review Text Block */
+.text {
+   background-color: var(--primary-color-3); 
+   color: var(--primary-color-2);
+   margin: 20px;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+/* ================================== */
+/* Logomark Rotation Styles */
+/* ================================== */
+
+.logomark {
+    transform: rotate(90deg);
+    height: 40%;
+    align-self: center;
+}
+
+/* Reverse Layout for Alternative Reviews */
+.review-2 {
+    flex-direction: row-reverse;
+}
+
+/* Adjusted Rotation for Logomark in Review-2 */
+.logomark-2 {
+    transform: rotate(270deg);
+}
+
+/* ================================ */
+/* Newsletter Section Styles */
+/* ================================ */
+
+.newsletter {
+    width: 100%;
+    background-color: var(--primary-color-3);
+    color: var(--primary-color-2);
+    display: flex;
+    justify-content: center;
+}
+
+/* Newsletter Link */
+.newsletter-link {
+    color: var(--primary-color-2);
+}
+
+/* ================================ */
+/* Newsletter Dialog Styles */
+/* ================================ */
+
+.newsletter-dialog {
+    width: 300px;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Dialog Backdrop */
+.newsletter-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* ================================ */
+/* Dialog Buttons */
+/* ================================ */
+
+.dialog-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* General Button Styling */
+.dialog-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Confirm Button */
+.dialog-buttons button:first-child {
+    background-color: var(--primary-color-3);
+    color: var(--primary-color-2);
+}
+
+.dialog-buttons button:first-child:hover {
+    background-color: var(--primary-color-2);
+    color: var(--primary-color-1);
+}
+
+/* Cancel Button */
+.dialog-buttons button:last-child {
+    background-color: #ccc;
+}
+
+.dialog-buttons button:last-child:hover {
+    background-color: #bbb;
+}
+
+/* ================================ */
+/* Thank You Message */
+/* ================================ */
+
+.thank-you-message {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary-color-3);
+    margin-top: 10px;
+}
+
+.logomark-music {
+    transform: rotate(0);
+    height: 15rem;
+}
+
+.page-hero {
+    width: 70%;
+    margin: 0 auto 1rem auto;
+}
+
+.usp-text > h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.page-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.headings {
+    font-size: 5rem;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.headings-1 {
+    margin: 4rem auto;
+}
+.page-hero-text {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.page-img {
+    width: 100%;
+}
+
+.page-hero-text-2 {
+    margin: 2rem auto;
+}
+
+.usp {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto 1rem auto;
+}
+
+.usp-1,
+.usp-2,
+.usp-3,
+.usp-4,
+.usp-5 {
+    display: flex;
+} 
+
+.usp-2,
+.usp-4 {
+    flex-direction: row-reverse;
+}
+
+.usp-img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    height: 500px;
+    overflow: hidden;
+}
+
+.usp-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.usp-text > h3 {
+    font-size: 2.3rem;
+    margin: 0;
+}
+.usp-text > p {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hero-logo-music {
+    width: 60%;
+}
+
+.team-section {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.people,
+.dogs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.person,
+.dog {
+    width: 33.33%;
+}
+
+.team-img {
+    width: 95%;
+    height: 600px;
+    justify-self: center;
+    object-fit: cover;
+}
+
+.self-directed-btn {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.word {
+    position: relative;
+    display: inline-flex;
+    transition: background 0.3s ease-in-out;
+    padding-left: 0.2em;
+}
+
+.word::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: radial-gradient(circle, var(--primary-color-3) 0%, var(--primary-color-3) 80%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: scaleX(0);
+}
+
+.word.highlight::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+@media screen and (max-width: 1259px){
+    .social-icons .icon-wrapper .default,
+    .social-icons .icon-wrapper .hover, 
+    footer .social-icons .icon-wrapper .default,
+    footer .social-icons .icon-wrapper .hover {
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav-links li a {
+        font-size: 0.8rem;
+    }
+    
+    nav > .logo,
+    footer > .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .usp-text > h3 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1102px){
+    nav > .social-icons {
+        display: none;
+    } 
+    .usp-text > h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 846px){
+    .usp-1,
+    .usp-2,
+    .usp-3,
+    .usp-4,
+    .usp-5 {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .usp,
+    .usp-text {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1070px){
+    .headings {
+        font-size: 3rem;
+    } 
+    .headings-1 {
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 1001px){
+    .navbar {
+        flex-direction: row-reverse;
+    }
+   
+    .nav-links {
+        display: none;
+    }
+    
+    .logomark {
+        display: none;
+    }
+
+    .hamburger-links {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        display: none;
+    }
+
+    /* Show when active */
+    .hamburger-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 35px;
+        height: 25px;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        border-radius: 3px;
+    }
+    
+    /* Animation for active (open) state */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg);
+    }
+}
+
+@media screen and (max-width: 696px){
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: 1200px;
+        padding: 0;
+    }
+
+    .residency {
+        flex-direction: column;
+    }
+
+    .hero-left,
+    .hero-right,
+    .res-img,
+    .residency-text {
+        width: 100%;
+    }
+
+    .artist-img {
+        min-width: 100px;
+        max-width: 250px;
+        border-radius: 25%;
+    }
+
+    .page-hero-text {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 470px){
+    .hero {
+        height: 1300px;
+    }
+    .review {
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .artist-img {
+        width: 250px;
+        align-self: center;
+        border-radius: 50%;
+    }
+
+    footer > p {
+        font-size: 0.7rem;
+    }
+
+    footer > .social-icons {
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    .hero {
+        height: 1400px;
+    }
+    .review {
+        flex-direction: column;
+        height: 520px;
+    }
+
+    .newsletter > p {
+        font-size: 0.7rem;
+    }
+    footer > p {
+        font-size: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 330px){
+    .review {
+        flex-direction: column;
+        height: 540px;
+    }
+    
+    .artist-img {
+        width: 150px;
+    }
+}

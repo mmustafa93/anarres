@@ -884,6 +884,12 @@ p {
     }
 }
 
+@media screen and (max-width: 436px) {
+    .heading {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 370px){
     .hero {
         height: 1250px;

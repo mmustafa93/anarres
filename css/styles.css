@@ -891,9 +891,6 @@ p {
 }
 
 @media screen and (max-width: 370px){
-    .hero {
-        height: 1250px;
-    }
     .review {
         flex-direction: column;
         height: 520px;

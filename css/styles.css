@@ -720,7 +720,7 @@ p {
         width: 70%;
         display: flex;
         flex-direction: column;
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
         display: none;
     }
 
@@ -768,10 +768,12 @@ p {
         align-items: center;
         height: 1200px;
         padding: 0;
+        gap: 20px;
     }
 
     .residency {
         flex-direction: column;
+        gap: 20px;
     }
 
     .hero-left,

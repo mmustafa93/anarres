@@ -12,7 +12,6 @@
     --secondary-color-1: #D26A42;
     --secondary-color-2: #FFDB5880;
     
-
     /* Other Global Variables */
     --transition-speed: 0.5s; /* Global transition duration */
 }
@@ -373,7 +372,7 @@ p {
 
 .artists-in-residence {
     width: 70%;
-    margin: 0 auto 1rem auto; /* Center align */
+    margin: 1rem auto 1rem auto; /* Center align */
 }
 
 /* ================================== */
@@ -664,6 +663,7 @@ p {
         font-size: 3rem;
     }
 }
+
 @media screen and (max-width: 1259px){
     .social-icons .icon-wrapper .default,
     .social-icons .icon-wrapper .hover, 
@@ -895,7 +895,6 @@ p {
         flex-direction: column;
         height: 520px;
     }
-
     .usp-img,
     .res-img {
         height: 150px;
@@ -907,6 +906,9 @@ p {
     footer > p {
         font-size: 0.5rem;
     }
+    footer {
+        height: 100px;
+    }
 }
 
 @media screen and (max-width: 330px){
@@ -914,12 +916,10 @@ p {
         height: 1200px;
         margin-bottom: 30px;
     }
-
     .review {
         flex-direction: column;
         height: 540px;
     }
-    
     .artist-img {
         width: 150px;
     }

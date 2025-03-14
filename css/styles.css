@@ -836,7 +836,8 @@ p {
     .hero-left,
     .hero-right,
     .res-img,
-    .residency-text {
+    .residency-text,
+    .residencies > p {
         width: 100%;
     }
 

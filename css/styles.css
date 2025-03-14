@@ -299,7 +299,7 @@ nav, footer {
 
 .residencies {
     width: 70%;
-    margin: 0 auto; /* Center align */
+    margin: 1rem auto 1rem auto; /* Center align */
     display: flex;
     flex-direction: column;
     gap: 20px;

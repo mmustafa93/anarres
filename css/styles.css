@@ -623,7 +623,7 @@ p {
 
 .team-img {
     width: 95%;
-    height: 500px;
+    height: 400px;
     justify-self: center;
     object-fit: cover;
 }
@@ -753,9 +753,12 @@ p {
     }
 
     .usp-img,
-    .res-img,
-    .team-img {
+    .res-img{
         height: 250px;
+    }
+
+    .team-img {
+        height: 200px;
     }
 
     .hamburger-links {
@@ -846,10 +849,8 @@ p {
         width: 100%;
     }
 
-    .usp-img,
-    .res-img,
     .team-img {
-        height: 250px;
+        height: 150px;
     }
 
     .artist-img {
@@ -907,9 +908,12 @@ p {
         height: 520px;
     }
     .usp-img,
-    .res-img,
-    .team-img {
+    .res-img {
         height: 150px;
+    }
+
+    .team-img {
+        height: 100px;
     }
 
     .newsletter > p {

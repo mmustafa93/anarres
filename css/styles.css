@@ -301,6 +301,9 @@ nav, footer {
 .residencies {
     width: 70%;
     margin: 0 auto; /* Center align */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 /* Centered Paragraph within Residencies */
@@ -321,15 +324,11 @@ nav, footer {
 
 .heading {
     font-size: 2.5rem;
-}
-
-.subheading {
-    font-size: 1.5rem;
+    margin: 0;
 }
 
 /* Center Align Text Elements */
 .heading,
-.subheading,
 p {
     text-align: center;
 }
@@ -340,18 +339,30 @@ p {
 
 .residency {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    width: 50%;
 }
+
+.sub-residency {
+    display: flex;
+}
+
 
 /* Residency Image */
 .res-img {
     width: 50%;
-    height: 675px;
+    height: 500px;
     object-fit: cover;
 }
 
 /* Reverse Layout for Artist-Led Residency */
 .artist-led-residency {
+    flex-direction: column;
+}
+
+.sub-residency:last-child {
     flex-direction: row-reverse;
 }
 
@@ -579,7 +590,9 @@ p {
     align-items: center;
     width: 100%;
 }
-.usp-text > h3 {
+
+.usp-text > h3,
+.residency > h3 {
     font-size: 2.3rem;
     margin: 0;
 }
@@ -673,8 +686,13 @@ p {
     nav > .social-icons {
         display: none;
     } 
-    .usp-text > h3 {
+    .usp-text > h3,
+    .residency > h3 {
         font-size: 1.5rem;
+    }
+
+    .residency-text {
+        width: 80%;
     }
 }
 
@@ -766,14 +784,20 @@ p {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
+        width: 100%;
         height: 1200px;
         padding: 0;
         gap: 20px;
     }
 
-    .residency {
+    .sub-residency,
+    .sub-residency:last-child {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .residency {
+        margin: 0 auto;
     }
 
     .hero-left,
@@ -791,6 +815,14 @@ p {
 
     .page-hero-text {
         width: 75%;
+    }
+
+    .artists-in-residence {
+        margin-top: 20px;
+    }
+
+    .artists-in-residence > h1 {
+        margin-bottom: 20px;
     }
 }
 

@@ -224,7 +224,7 @@ nav, footer {
 }
 
 .hero-text {
-    text-align: start;
+    text-align: center;
 }
 
 /* ============================= */
@@ -332,6 +332,7 @@ nav, footer {
 p {
     text-align: center;
 }
+
 
 /* ============================= */
 /* Residency Item Styles */
@@ -658,6 +659,11 @@ p {
     transform: scaleX(1);
 }
 
+@media screen and (max-width: 1335px) {
+    .headings {
+        font-size: 3rem;
+    }
+}
 @media screen and (max-width: 1259px){
     .social-icons .icon-wrapper .default,
     .social-icons .icon-wrapper .hover, 
@@ -713,7 +719,7 @@ p {
 
 @media screen and (max-width: 1070px){
     .headings {
-        font-size: 3rem;
+        font-size: 1.5rem;
     } 
     .headings-1 {
         font-size: 1.5rem;
@@ -734,14 +740,31 @@ p {
         display: none;
     }
 
+    .page-hero-text {
+        width: 75%;
+    }
+
+    .usp-text > p {
+        width: 75%;
+    }
+
+    .usp-img,
+    .res-img {
+        height: 250px;
+    }
+
     .hamburger-links {
         width: 70%;
         display: flex;
         flex-direction: column;
-        margin: -40px auto 40px auto;
+        margin: -40px auto 20px auto;
         display: none;
     }
 
+    .hamburger-links > li  {
+        padding: 0;
+        justify-self: flex-start;
+    }
     /* Show when active */
     .hamburger-links.active {
         display: flex;
@@ -798,6 +821,16 @@ p {
 
     .residency {
         margin: 0 auto;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .page-hero {
+        width: 100%;
+    }
+
+    .page-hero-text {
+        width: 60%;
     }
 
     .hero-left,
@@ -807,18 +840,19 @@ p {
         width: 100%;
     }
 
+    .usp-img,
+    .res-img {
+        height: 250px;
+    }
+
     .artist-img {
         min-width: 100px;
         max-width: 250px;
-        border-radius: 25%;
+        border-radius: 10px;
     }
 
-    .page-hero-text {
-        width: 75%;
-    }
-
-    .artists-in-residence {
-        margin-top: 20px;
+    .residencies {
+        margin: 20px auto;
     }
 
     .artists-in-residence > h1 {
@@ -826,9 +860,9 @@ p {
     }
 }
 
-@media screen and (max-width: 470px){
-    .hero {
-        height: 1300px;
+@media screen and (max-width: 480px){
+    .usp-text > p {
+        width: 100%;
     }
     .review {
         flex-direction: column;
@@ -852,11 +886,16 @@ p {
 
 @media screen and (max-width: 370px){
     .hero {
-        height: 1400px;
+        height: 1250px;
     }
     .review {
         flex-direction: column;
         height: 520px;
+    }
+
+    .usp-img,
+    .res-img {
+        height: 150px;
     }
 
     .newsletter > p {
